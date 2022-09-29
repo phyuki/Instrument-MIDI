@@ -1,0 +1,66 @@
+
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+android {
+    compileSdkVersion 28
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+
+        // cmake {
+        //     path 'src/main/jni/CMakeLists.txt'
+        // }
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 125
+        versionName "1.25"
+    }
+
+    buildFeatures {
+        prefab true
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        disable 'OldTargetApi', 'ExpiredTargetSdkVersion'
+    }
+
+    namespace = 'org.billthefarmer.mididriver'
+    ndkVersion '24.0.8215888'
+}
+
+afterEvaluate {
+    // Because the components are created only during the
+    // afterEvaluate phase, you must configure your publications using
+    // the afterEvaluate() lifecycle method.
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                // You can then customize attributes of the
+                // publication as shown below.
+                groupId = 'com.github.billthefarmer'
+                artifactId = 'mididriver'
+                version = '1.25'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.oboe:oboe:1.6.1'
+}

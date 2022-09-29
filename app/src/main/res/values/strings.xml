@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Instrument MIDI</string>
+
+    <string name="itemBox">Piano</string>
+
+    <string-array name="instruments">
+        <item>Piano</item>
+        <item>Guitar</item>
+        <item>Voice</item>
+        <item>Drums</item>
+    </string-array>
+</resources>
