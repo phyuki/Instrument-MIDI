@@ -16,3 +16,5 @@ Ex.: C4, F#4, D5, A3...
 
 Utiliza-se das bibliotecas JavaOSC e mididriver, disponíveis no próprio Github, pelos autores hoijui e billtherfarmer.
 Desenvolvido pelo ambiente de desenvolvimento Android Studio.
+
+Exemplo da execução da aplicação: https://www.youtube.com/shorts/ACM8p64WJXI
